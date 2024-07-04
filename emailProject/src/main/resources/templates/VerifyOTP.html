@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Email Template</title>
+</head>
+<body>
+<h1>Welcome to our platform!</h1>
+<p>
+    Hello, <span th:text="${email}">example@email.com</span>!<br>
+    Please verify OTP by clicking Below link:
+</p>
+<br>
+<a th:href="'http://localhost:9191/api/verifyOTP'+ '?email=' + ${email}'&otp=' + ${otp}"
+
+   th:if="${email != null} && ${otp != null}">
+
+     Verify OTP
+
+</a>
+
+
+</body>
+</html>
